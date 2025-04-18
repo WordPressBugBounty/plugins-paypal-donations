@@ -39,14 +39,18 @@ if (isset($pd_options['new_tab'])) {
         }
 
         // More Settings
-        if (isset($pd_options['return_method']))
+        if (isset($pd_options['return_method'])){
             $paypal_btn .= $indent.'<input type="hidden" name="rm" value="' .esc_attr($pd_options['return_method']). '" />'.PHP_EOL;
-        if (isset($pd_options['currency_code']))
+        }
+        if (isset($pd_options['currency_code'])){
             $paypal_btn .= $indent.'<input type="hidden" name="currency_code" value="' .esc_attr($pd_options['currency_code']). '" />'.PHP_EOL;
-        if (isset($pd_options['button_localized']))
-            { $button_localized = $pd_options['button_localized']; } else { $button_localized = 'en_US'; }
-        if (isset($pd_options['set_checkout_language']) and $pd_options['set_checkout_language'] == true)
+        }
+        if (isset($pd_options['button_localized'])) { 
+            $button_localized = $pd_options['button_localized']; } else { $button_localized = 'en_US'; 
+        }
+        if (isset($pd_options['set_checkout_language']) && $pd_options['set_checkout_language'] == true){
             $paypal_btn .= $indent.'<input type="hidden" name="lc" value="' .esc_attr($pd_options['checkout_language']). '" />'.PHP_EOL;
+        }
 
         // Settings not implemented yet
         //      $paypal_btn .=     '<input type="hidden" name="amount" value="20" />';
@@ -56,7 +60,7 @@ if (isset($pd_options['new_tab'])) {
             $button_localized = apply_filters('pd_button_localized_value', $button_localized);
             $button_url = str_replace('en_US', $button_localized, $donate_buttons[$pd_options['button']]);
         }
-        $paypal_btn .=  $indent.'<input type="image" style="cursor: pointer;" src="' .esc_url($button_url). '" name="submit" alt="PayPal - The safer, easier way to pay online." />'.PHP_EOL;
+        $paypal_btn .=  $indent.'<input type="image" style="cursor: pointer;" src="' .esc_url($button_url). '" name="submit" alt="'.__('PayPal - The safer, easier way to pay online.', PayPalDonations::TEXT_DOMAIN).'" />'.PHP_EOL;
 
         // PayPal stats tracking
         if (!isset($pd_options['disable_stats']) or $pd_options['disable_stats'] != true)

@@ -3,8 +3,8 @@ Contributors: Tips and Tricks HQ, artstorm
 Donate link: https://www.tipsandtricks-hq.com/paypal-donations-widgets-plugin
 Tags: paypal, donation, donations, shortcode, widget, donate, button, sidebar, paypal donation, payment
 Requires at least: 5.5
-Tested up to: 6.6
-Stable tag: 1.9.10
+Tested up to: 6.8
+Stable tag: 1.9.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,6 +89,11 @@ for questions, answers, support and feature requests.
 
 
 == Changelog ==
+
+= version 1.9.11 =
+* Language translation related updates.
+* Updated the French language translation .po file.
+* Adjusted the navigation tabs HTML and CSS to be compatible with the latest version of WordPress.
 
 = version 1.9.10 =
 * jQuery code update: stopped using jQuery.fn.click in favor of jQuery.fn.on( 'click' )

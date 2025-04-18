@@ -1,24 +1,24 @@
 <!-- Create a header in the default WordPress 'wrap' container -->
 <div class="wrap">
-    <h2>PayPal Donations</h2>
+    <h2><?php esc_html_e( 'PayPal Donations', 'paypal-donations' ); ?></h2>
 
     <div style="background:#FFF6D5;border: 1px solid #D1B655;color: #3F2502;margin: 10px 0;padding: 5px 5px 5px 10px;text-shadow: 1px 1px #FFFFFF;">
         <p>
-            The usage instruction and video tutorial is available on the PayPal Donations plugin <a href="https://www.tipsandtricks-hq.com/paypal-donations-widgets-plugin" target="_blank">documentation page</a>.
+            <?php printf(esc_html__( 'The usage instruction and video tutorial is available on the PayPal Donations plugin %1$sdocumentation page%2$s.', 'paypal-donations' ),'<a href="https://www.tipsandtricks-hq.com/paypal-donations-widgets-plugin" target="_blank">','</a>'); ?>
         </p>
         <p>
-            If you want to accept donations and payments using PayPal's fast Checkout API, try our free <a href="https://wordpress.org/plugins/wp-express-checkout/" target="_blank">WP Express Checkout</a> plugin.
+            <?php printf(esc_html__( 'If you want to accept donations and payments using PayPal\'s fast Checkout API, try our free %1$sWP Express Checkout%2$s plugin.', 'paypal-donations' ),'<a href="https://wordpress.org/plugins/wp-express-checkout/" target="_blank">','</a>'); ?>
         </p>
         <p>
-            If you need a feature rich plugin for accepting PayPal donations and payments then check out our <a target="_blank" href="https://www.tipsandtricks-hq.com/wordpress-estore-plugin-complete-solution-to-sell-digital-products-from-your-wordpress-blog-securely-1059">WP eStore Plugin</a> (it comes with premium support). You can accept subscription/recurring payments with it also.
+            <?php printf(esc_html__( 'If you need a feature rich plugin for accepting PayPal donations and payments then check out our %1$sWP eStore Plugin%2$s (it comes with premium support). You can accept subscription/recurring payments with it also.', 'paypal-donations' ),'<a target="_blank" href="https://www.tipsandtricks-hq.com/wordpress-estore-plugin-complete-solution-to-sell-digital-products-from-your-wordpress-blog-securely-1059">','</a>'); ?>
         </p>
     </div>
 
     <h2 class="nav-tab-wrapper">
-        <ul id="paypal-donations-tabs">
-            <li id="paypal-donations-tab_1" class="nav-tab nav-tab-active"><?php _e('General', 'paypal-donations'); ?></li>
-            <li id="paypal-donations-tab_2" class="nav-tab"><?php _e('Advanced', 'paypal-donations'); ?></li>
-        </ul>
+        <div id="paypal-donations-tabs">
+            <a id="paypal-donations-tab_1" class="nav-tab nav-tab-active"><?php _e('General', 'paypal-donations'); ?></a>
+            <a id="paypal-donations-tab_2" class="nav-tab"><?php _e('Advanced', 'paypal-donations'); ?></a>
+        </div>
     </h2>
 
     <form method="post" action="options.php">

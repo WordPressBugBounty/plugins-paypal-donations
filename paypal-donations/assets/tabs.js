@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-	$("#paypal-donations-tabs li").each(function() {
+	$("#paypal-donations-tabs a").each(function() {
 		$(this).on( 'click', function() {
 			var tabId = $(this).attr('id');
 			var tabId = tabId.split('_');

@@ -6,6 +6,10 @@
 	cursor: pointer;
 }
 
+#paypal-donations-tabs a {
+	cursor: pointer;
+}
+
 #paypal-donations-tabs-content > div {
 	display: none;
 }

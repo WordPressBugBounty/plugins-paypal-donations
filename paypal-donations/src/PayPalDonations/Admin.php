@@ -50,8 +50,8 @@ class PayPalDonations_Admin
     public function menu()
     {
         add_options_page(
-            'PayPal Donations Options',
-            'PayPal Donations',
+            __( 'PayPal Donations Options', 'paypal-donations' ),
+            __( 'PayPal Donations', 'paypal-donations' ),
             'administrator',
             self::PAGE_SLUG,
             array($this, 'renderpage')
@@ -344,7 +344,7 @@ class PayPalDonations_Admin
                 'label_for' => 'sandbox',
                 'description' => sprintf(
                     __('Enable PayPal sandbox for testing. Visit %s for more information and to register a merchant and customer testing accounts.', PayPalDonations::TEXT_DOMAIN),
-                    '<a href="http://developer.paypal.com/">http://developer.paypal.com/</a>'
+                    '<a href="http://developer.paypal.com/" target="_blank">http://developer.paypal.com/</a>'
                 ),
             )
         );
@@ -380,7 +380,7 @@ class PayPalDonations_Admin
                 'label_for' => 'return_method',
                 'description' => __(
                     'Takes effect only if the return page is set.',
-                    'post-snippets'
+                    'paypal-donations'
                 ),
             )
         );
@@ -690,7 +690,7 @@ class PayPalDonations_Admin
         $options = get_option($optionKey);
 
         echo "<select id='checkout_language' name='{$optionKey}[checkout_language]'>";
-        echo "<option value=''>None</option>";
+        echo sprintf('<option value="">%s</option>', esc_html__('None', 'paypal-donations'));
         if (isset($options['checkout_language'])) {
             $checkout_language = $options['checkout_language'];
         } else {
@@ -713,9 +713,9 @@ class PayPalDonations_Admin
         $optionKey = PayPalDonations::OPTION_DB_KEY;
         $options = get_option($optionKey);
         $methods = array(
-            __('GET method (default)', 'post-snippets'),
-            __('GET method, no variables', 'post-snippets'),
-            __('POST method', 'post-snippets')
+            __('GET method (default)', 'paypal-donations'),
+            __('GET method, no variables', 'paypal-donations'),
+            __('POST method', 'paypal-donations')
         );
 
         echo "<select id='return_method' name='{$optionKey}[return_method]'>";

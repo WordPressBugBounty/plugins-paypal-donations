@@ -207,3 +207,6 @@ msgstr ""
 #: src/PayPalDonations/Widget.php:89
 msgid "Donate"
 msgstr ""
+
+msgid "PayPal - The safer, easier way to pay online."
+msgstr ""
